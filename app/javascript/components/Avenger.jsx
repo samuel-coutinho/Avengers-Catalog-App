@@ -63,18 +63,19 @@ class Avenger extends React.Component {
 
   render() {
     const { avenger } = this.state;
-    let ingredientList = "No Heroes available";
+    let informationtList = "No Heroes available";
 
     if (avenger.real_name.length > 0) {
-      ingredientList = avenger.real_name
-        .split(",")
+      
+      informationtList = [avenger.hero_name, avenger.real_name, avenger.age, avenger.status]
+        
         .map((ingredient, index) => (
           <li key={index} className="list-group-item">
             {ingredient}
-          </li>
+          </li> 
         ));
     }
-    const avengerInstruction = this.addHtmlEntities(avenger.real_name);
+    const avengerDescription = this.addHtmlEntities(avenger.description);
 
     return (
       <div className="">
@@ -93,15 +94,15 @@ class Avenger extends React.Component {
           <div className="row">
             <div className="col-sm-12 col-lg-3">
               <ul className="list-group">
-                <h5 className="mb-2">Ingredients</h5>
-                {ingredientList}
+                <h5 className="mb-2">Hero's Profile</h5>
+                {informationtList}
               </ul>
             </div>
             <div className="col-sm-12 col-lg-7">
-              <h5 className="mb-2">Preparation Instructions</h5>
+              <h5 className="mb-2">Hero Description</h5>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: `${avengerInstruction}`
+                  __html: `${avengerDescription}`
                 }}
               />
             </div>

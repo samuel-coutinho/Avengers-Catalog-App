@@ -58,7 +58,12 @@ class Avengers extends React.Component {
           <h1 className="display-5 text-center">Heroes for all kinds of missions!</h1>
           <div class="d-flex flex-wrap align-content-center">
             <img src="https://preview.redd.it/8yonn7m4bfk31.jpg?width=960&crop=smart&auto=webp&s=dd7017d64e4ee18110ec3b608c248671b6427662" class="mx-auto"  />           
-          </div>          
+          </div>
+          <br></br>
+          <p className="lead text-muted text-center">
+              We have gathered our most popular and powerful heroes
+	            for the most important and dangerous missions to protect the Earth.
+          </p>          
          
         </section>
         <div className="py-5">
