@@ -7,7 +7,9 @@ class NewAvenger extends React.Component {
       this.state = {
         hero_name: "",
         real_name: "",
-        status: ""
+        status: "",
+        age: "",
+        description: ""
       };
   
       this.onChange = this.onChange.bind(this);
@@ -28,15 +30,17 @@ class NewAvenger extends React.Component {
     onSubmit(event) {
       event.preventDefault();
       const url = "/api/v1/avengers/create";
-      const { hero_name, real_name, status } = this.state;
+      const { hero_name, real_name, status, age, description } = this.state;
   
-      if (hero_name.length == 0 || real_name.length == 0 || status.length == 0)
+      if (hero_name.length == 0 || real_name.length == 0 || description.length == 0)
         return;
   
       const body = {
         hero_name,
         real_name,
-        status
+        status,
+        age,
+        description
       };
   
       const token = document.querySelector('meta[name="csrf-token"]').content;
@@ -87,17 +91,37 @@ class NewAvenger extends React.Component {
                     className="form-control"
                     required
                     onChange={this.onChange}
-                  />
-                  {/* <small id="ingredientsHelp" className="form-text text-muted">
-                    Separate each ingredient with a comma.
-                  </small> */}
+                  />                  
                 </div>
-                <label htmlFor="status">Preparation Instructions</label>
+                <div className="form-group">
+                  <label htmlFor="avengerStatus">Hero Status</label>
+                  <input
+                    type="text"
+                    name="status"
+                    id="avengerStatus"
+                    className="form-control"
+                    required
+                    onChange={this.onChange}
+                  />                  
+                </div>
+                <div className="form-group">
+                  <label htmlFor="avengerAge">Age</label>
+                  <input
+                    type="number"
+                    min="1"
+                    name="age"
+                    id="avengerAge"
+                    className="form-control"
+                    required
+                    onChange={this.onChange}
+                  />                  
+                </div>
+                <label htmlFor="description">Hero Description</label>
                 <textarea
                   className="form-control"
-                  id="status"
-                  name="status"
-                  rows="5"
+                  id="description"
+                  name="description"
+                  rows="3"
                   required
                   onChange={this.onChange}
                 />

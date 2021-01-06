@@ -33,10 +33,13 @@ class Avengers extends React.Component {
             alt={`${avenger.hero_name} image`}
           />
           <div className="card-body">
-            <h5 className="card-title">{avenger.hero_name}</h5>
-            <Link to={`/avenger/${avenger.id}`} className="btn custom-button">
-              View Hero
-            </Link>
+            <h5 className="card-title">Hero Name:  
+            <Link to={`/avenger/${avenger.id}`} className="card-title">
+              {avenger.hero_name}
+            </Link></h5>            
+            <h6 className="card-title">Real Name: {avenger.real_name}</h6>
+            <h6 className="card-subtitle mb-2 text-muted">Status: {avenger.status}</h6>
+            
           </div>
         </div>
       </div>
@@ -51,15 +54,17 @@ class Avengers extends React.Component {
 
     return (
       <>
-        <section className="jumbotron jumbotron-fluid text-center">
-          <div className="container py-5">
-            <h1 className="display-4">Heroes for all kinds of missions!</h1>
-            <p className="lead text-muted">
-              We’ve pulled together our most popular recipes, our latest
-              additions, and our editor’s picks, so there’s sure to be something
-              tempting for you to try.
-            </p>
+        <section className="jumbotron jumbotron-fluid mx-auto">
+          <h1 className="display-5 text-center">Heroes for all kinds of missions!</h1>
+          <div class="d-flex flex-wrap align-content-center">
+            <img src="https://preview.redd.it/8yonn7m4bfk31.jpg?width=960&crop=smart&auto=webp&s=dd7017d64e4ee18110ec3b608c248671b6427662" class="mx-auto"  />           
           </div>
+          <br></br>
+          <p className="lead text-muted text-center">
+              We have gathered our most popular and powerful heroes
+	            for the most important and dangerous missions to protect the Earth.
+          </p>          
+         
         </section>
         <div className="py-5">
           <main className="container">

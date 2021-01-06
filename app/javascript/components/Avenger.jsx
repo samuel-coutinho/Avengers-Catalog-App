@@ -5,8 +5,8 @@ class Avenger extends React.Component {
   constructor(props) {
     super(props);
     this.state = { avenger: { real_name: "" } };
-
     this.addHtmlEntities = this.addHtmlEntities.bind(this);
+    this.deleteAvenger = this.deleteAvenger.bind(this);
   }
 
   componentDidMount() {
@@ -35,20 +35,47 @@ class Avenger extends React.Component {
       .replace(/&gt;/g, ">");
   }
 
+  deleteAvenger() {
+    const {
+      match: {
+        params: { id }
+      }
+    } = this.props;
+    const url = `/api/v1/destroy/${id}`;
+    const token = document.querySelector('meta[name="csrf-token"]').content;
+
+    fetch(url, {
+      method: "DELETE",
+      headers: {
+        "X-CSRF-Token": token,
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error("Network response was not ok.");
+      })
+      .then(() => this.props.history.push("/avengers"))
+      .catch(error => console.log(error.message));
+  }
+
   render() {
     const { avenger } = this.state;
-    let ingredientList = "No Heroes available";
+    let informationtList = "No Heroes available";
 
     if (avenger.real_name.length > 0) {
-      ingredientList = avenger.real_name
-        .split(",")
+      
+      informationtList = [avenger.hero_name, avenger.real_name, avenger.age, avenger.status]
+        
         .map((ingredient, index) => (
           <li key={index} className="list-group-item">
             {ingredient}
-          </li>
+          </li> 
         ));
     }
-    const avengerInstruction = this.addHtmlEntities(avenger.real_name);
+    const avengerDescription = this.addHtmlEntities(avenger.description);
 
     return (
       <div className="">
@@ -67,26 +94,26 @@ class Avenger extends React.Component {
           <div className="row">
             <div className="col-sm-12 col-lg-3">
               <ul className="list-group">
-                <h5 className="mb-2">Ingredients</h5>
-                {ingredientList}
+                <h5 className="mb-2">Hero's Profile</h5>
+                {informationtList}
               </ul>
             </div>
             <div className="col-sm-12 col-lg-7">
-              <h5 className="mb-2">Preparation Instructions</h5>
+              <h5 className="mb-2">Hero Description</h5>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: `${avengerInstruction}`
+                  __html: `${avengerDescription}`
                 }}
               />
             </div>
             <div className="col-sm-12 col-lg-2">
-              <button type="button" className="btn btn-danger">
-                Delete Recipe
+              <button type="button" className="btn btn-danger" onClick={this.deleteAvenger}>
+                Delete Hero
               </button>
             </div>
           </div>
           <Link to="/avengers" className="btn btn-link">
-            Back to recipes
+            Back to Avengers
           </Link>
         </div>
       </div>
