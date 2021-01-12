@@ -1,4 +1,6 @@
 class Api::V1::AvengersController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     avenger = Avenger.all
     render json: avenger
