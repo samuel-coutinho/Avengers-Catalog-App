@@ -1,6 +1,4 @@
-# README
-
-# Avengers Catalog
+# Avengers-Catalog-App
 
 A avengers catalog created using React, Rails and Postgresql.
 
@@ -26,7 +24,7 @@ A avengers catalog created using React, Rails and Postgresql.
 ```
 git clone https://github.com/samuel-coutinho/Avengers-Catalog-App.git
 ```
-  Run bunlde nad after yarn
+  Run bundle and then yarn
   
 ```
 $ bundle
@@ -48,6 +46,10 @@ $ rails db:migrate
 ```
 $ rails db:seed
 ```
+* To start the application
+```
+$ rails s
+```
 
 
-# Avengers-Catalog-App
+
