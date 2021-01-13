@@ -7,15 +7,25 @@ A avengers catalog created using React, Rails and Postgresql.
 * System dependencies
 
 -babel/preset-react: "^7.12.10"
+
 -rails/webpacker: "5.2.1"
+
 -babel-plugin-transform-react-remove-prop-types: "^0.4.24"
+
 -bootstrap: "^4.5.3"
--jquery: "^3.5.1"
+
+-jquery: "^3.5.1
+
 -popper.js: "^1.16.1"
+
 -prop-types: "^15.7.2"
+
 -react: "^17.0.1"
+
 -react-dom: "^17.0.1"
+
 -react-router-dom: "^5.2.0"  
+
 -webpack-dev-server": "^3.11.1"
 
 * Configuration
