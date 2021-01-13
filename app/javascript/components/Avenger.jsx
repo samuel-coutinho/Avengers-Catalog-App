@@ -69,9 +69,9 @@ class Avenger extends React.Component {
       
       informationtList = [avenger.hero_name, avenger.real_name, avenger.age, avenger.status]
         
-        .map((ingredient, index) => (
+        .map((information, index) => (
           <li key={index} className="list-group-item">
-            {ingredient}
+            {information}
           </li> 
         ));
     }

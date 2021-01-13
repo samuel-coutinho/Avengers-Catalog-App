@@ -30,6 +30,8 @@ class Avengers extends React.Component {
           <img
             src={avenger.image}
             className="card-img-top"
+            width="800"
+            height="200"
             alt={`${avenger.hero_name} image`}
           />
           <div className="card-body">
@@ -76,9 +78,7 @@ class Avengers extends React.Component {
             <div className="row">
               {avengers.length > 0 ? allAvengers : noAvenger}
             </div>
-            <Link to="/" className="btn btn-link">
-              Home
-            </Link>
+            
           </main>
         </div>
       </>

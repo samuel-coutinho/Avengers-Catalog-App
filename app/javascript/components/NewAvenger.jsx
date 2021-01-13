@@ -9,7 +9,8 @@ class NewAvenger extends React.Component {
         real_name: "",
         status: "",
         age: "",
-        description: ""
+        description: "",
+        image: ""
       };
   
       this.onChange = this.onChange.bind(this);
@@ -30,18 +31,20 @@ class NewAvenger extends React.Component {
     onSubmit(event) {
       event.preventDefault();
       const url = "/api/v1/avengers/create";
-      const { hero_name, real_name, status, age, description } = this.state;
+      const { hero_name, real_name, status, age, description, image } = this.state;
   
       if (hero_name.length == 0 || real_name.length == 0 || description.length == 0)
         return;
-  
+      
+
       const body = {
         hero_name,
         real_name,
         status,
         age,
-        description
-      };
+        description,
+        image
+      };    
   
       const token = document.querySelector('meta[name="csrf-token"]').content;
       fetch(url, {
@@ -111,6 +114,17 @@ class NewAvenger extends React.Component {
                     min="1"
                     name="age"
                     id="avengerAge"
+                    className="form-control"
+                    required
+                    onChange={this.onChange}
+                  />                  
+                </div>
+                <div className="form-group">
+                  <label htmlFor="avengerImage">Image URL</label>
+                  <input
+                    type="text"                    
+                    name="image"
+                    id="avengerImage"
                     className="form-control"
                     required
                     onChange={this.onChange}
