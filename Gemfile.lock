@@ -197,7 +197,6 @@ DEPENDENCIES
   webpacker
 
 RUBY VERSION
-   ruby 2.6.0p0
+   ruby 2.6.6
 
-BUNDLED WITH
-   2.2.5
+
