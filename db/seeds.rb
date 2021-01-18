@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Avenger.create(
-    hero_name: "Ironman",
-    real_name: "Antony Edward "Tony" Stark",
+    hero_name: "Iron man",
+    real_name: "Antony Edward Stark",
     status: "Active",
     age: 48, 
     description: "Wounded, captured and forced to build a weapon by his enemies,
@@ -25,12 +25,12 @@ Avenger.create(
     image: "https://www.comingsoon.net/assets/uploads/2015/01/captainamericaheader.jpg"     
 )
 Avenger.create(
-    hero_name: "Iron Man",
-    real_name: "Antony Edward Stark",
+    hero_name: "Thor",
+    real_name: "Thor Odinson",
     status: "Active",
-    age: 48,
-    description:"Wounded, captured and forced to build a weapon by his enemies, billionaire industrialist Tony Stark instead created an advanced suit of armor to save his life and escape captivity. Now with a new outlook on life, Tony uses his money and intelligence to make the world a safer, better place as Iron Man.",
-    image: "https://cdn.mos.cms.futurecdn.net/ytDTW3FMV5SswTnR5aYDgP.jpg"     
+    age: 1500,
+    description:"As the Norse God of thunder and lightning, Thor wields one of the greatest weapons ever made, the enchanted hammer Mjolnir. While others have described Thor as an over-muscled, oafish imbecile, he's quite smart and compassionate. He's self-assured, and he would never, ever stop fighting for a worthwhile cause.",
+    image: "https://thenationroar.com/wp-content/uploads/2020/08/47615e765c155760d0e854273f6d17c374973830.jpg"     
 )
 Avenger.create(
     hero_name: "The Incredible Hulk",
