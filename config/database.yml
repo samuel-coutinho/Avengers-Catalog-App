@@ -75,12 +75,12 @@ test:
 #
 # You can use this database configuration with:
 #
-production:
-  <<: *default
-  database: <%= ENV['DATABASE_URL'] %>
-#
 # production:
 #   <<: *default
-#   database: avengers_catalog_production
-#   username: avengers_catalog
-#   password: <%= ENV['AVENGERS_CATALOG_DATABASE_PASSWORD'] %>
+#   database: <%= ENV['DATABASE_URL'] %>
+#
+ production:
+  <<: *default
+  database: avengers_catalog_production
+  username: avengers_catalog
+  password: <%= ENV['AVENGERS_CATALOG_DATABASE_PASSWORD'] %>
