@@ -2,7 +2,7 @@
 
 A avengers catalog created using React, Rails and Postgresql.
 
-* Ruby version: ruby-2.6.0
+* Ruby version: ruby-2.6.6
 
 * System dependencies
 
