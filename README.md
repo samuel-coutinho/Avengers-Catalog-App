@@ -2,6 +2,11 @@
 
 A avengers catalog created using React, Rails and Postgresql.
 
+URL: https://samcoutinho.herokuapp.com/
+
+Email: user1@user.com
+Password: user123
+
 * Ruby version: ruby-2.6.6
 
 * System dependencies
